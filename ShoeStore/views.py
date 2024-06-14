@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 def home(request)->HttpResponse:
     return render(request,"ShoeStore/home.html")
- 
+
+def contato(request)->HttpResponse:
+    return render(request,"ShoeStore/contato.html")
 
 
