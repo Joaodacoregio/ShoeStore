@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
         integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <style>
@@ -56,7 +59,7 @@
         --font-primary: sans-serif;
         --font-headings: 'Roboto Slab', serif;
 
-        --spacing-gutter-medium: 3rem;
+        --spacing-gutter-medium: 2rem;
         --spacing-gutter-large: 4rem;
     }
 
@@ -78,11 +81,31 @@
     .container {
         max-width: 144rem;
         margin: 0 auto;
+        padding: var(--spacing-gutter-medium);
     }
 
     .main-header-container {
-        background-color: var(--color-success-dark)
+        background-color: var(--color-gray-3)
+    }
+
+    .main-logo {
+        color: var(--color-black);
+        width: fit-content;
+    }
+
+    .main-logo-icon {
+        margin-right: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-headings);
     }
 </style>
+
 
 <head>
