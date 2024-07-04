@@ -76,7 +76,6 @@
     body {
         font-size: 1.6rem;
         font-family: var(--font-primary);
-
     }
 
     .container {
@@ -87,7 +86,7 @@
     }
 
     .main-header-container {
-        background-color: var(--color-gray-3)
+        background-color: var(--color-gray-3);
     }
 
     .main-logo {
@@ -105,8 +104,10 @@
 
     .main-content-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center;
         gap: var(--spacing-gutter-large);
+        /* Ajuste o espaço entre os cards conforme necessário */
     }
 
     .module img {
@@ -122,6 +123,10 @@
 
     .module-list-item {
         max-width: 32rem;
+        width: 200px;
+        /* Ajuste a largura conforme necessário */
+        margin: 0;
+        /* Remove a margem adicional */
     }
 
     .module-list-item:hover {
@@ -132,6 +137,7 @@
     .module-text-container {
         gap: 2rem;
     }
+
 
     h1,
     h2,
