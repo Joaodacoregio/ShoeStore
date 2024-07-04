@@ -2,12 +2,15 @@
 
 <body>
     {%include "ShoeStore/partials/header.html" %}
+    <div class="module-block">
+        <main class="main-content container">
+            <div class="main-content main-content-list container">
+                {% include "ShoeStore/partials/modules.html"%}
+            </div>
+        </main>
+    </div>
 
-    <main class="main-content container">
-        <div class="main-content main-content-list container">
-            {% include "ShoeStore/partials/modules.html"%}
-        </div>
-    </main>
+ 
     <footer class="main-footer">
     </footer>
 </body>
