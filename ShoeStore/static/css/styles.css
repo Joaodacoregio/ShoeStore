@@ -60,8 +60,28 @@ body {
     font-size: 1.6rem;
     font-family: var(--font-primary);
     background-color: var(--color-gray-4);
+    
 }
 
+.container-module{
+    margin-top:8rem;
+}
+.grid-module {
+    display: grid;
+    grid-template-columns: repeat(1,minmax(200px, 1fr));
+    gap: 20px;
+    width: 50%;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-headings);
+    font-size: 24px;
+}
 .container {
     max-width: 144rem;
     margin: 0 auto;

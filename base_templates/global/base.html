@@ -8,33 +8,28 @@
 
     {%include "ShoeStore/partials/head.html"%}
     {%include "vendas/partials/head.html"%}
-  </head>
-  <body>
-    {% block navbar %}
-    {% endblock navbar %}
-
-
-
-    <div class="container-lg">
-      {% if messages %}
-        {% for message in messages %}
-          {% comment %}# TODO: ajustar estilo para alerta flutuante{% endcomment %}
-          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-            {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        {% endfor %}
-      {% endif %} 
+    </head>
     <body>
-      {% block content %}
-      <!--Conteu da pagina-->
-      {% endblock %}
+      {% block navbar %}
+      {% endblock navbar %}
+
+      <div class="container-lg">
+        {% if messages %}
+          {% for message in messages %}
+            {% comment %}# TODO: ajustar estilo para alerta flutuante{% endcomment %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %} 
+
+        {% block content %}
+        <!--Conteu da pagina-->
+        {% endblock %}
+      </div>
+
+      {% comment %}manter tag script proxima do fim de body{% endcomment %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
- 
-
-    </div>
-
-    {% comment %}manter tag script proxima do fim de body{% endcomment %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
 </html>
