@@ -1,10 +1,4 @@
-{% extends "global/base.html" %}
-
-{% block title %}Modulos|Calçados Bilu{% endblock title %}
-
-{% block navbar %}
-{%include "ShoeStore/partials/navbar.html"%}
-{% endblock navbar %}
+{% extends "ShoeStore/partials/base.html" %} 
 
 
 {% block content %}
@@ -12,10 +6,10 @@
         <div class="grid-module-external"> 
             <img src="https://i.imgur.com/X9uFdJR.png" alt="">
             <div class="grid-module-interne">
-                <div class="card">Administrar</div>
-                <a href="vendas/" class="card">Vendas</a>
-                <div class="card">Compras</div>
-                <div class="card">Financeiro</div>
+                <div class="module-card ">Administrar</div>
+                <a href="vendas/" class="module-card ">Vendas</a>
+                <div class="module-card ">Compras</div>
+                <div class="module-card ">Financeiro</div>
             </div>
         </div>
     </div>
