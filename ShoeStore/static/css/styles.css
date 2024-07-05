@@ -67,6 +67,7 @@ body {
     margin-top:8rem;
 }
 .grid-module-interne {
+    margin-left:1rem;
     display: grid;
     grid-template-columns: repeat(1,minmax(200px, 1fr));
     gap: 20px;
@@ -81,13 +82,20 @@ body {
 }
 
 .card {
-    background-color: #f9f9f9;
     padding: 20px;
     text-align: left;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: var(--font-headings);
     font-size: 24px;
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+    transition: all 300ms ease-in-out;
+    transform: scale(1);
+}
+
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
 }
 .container {
     max-width: 144rem;
@@ -198,15 +206,11 @@ body {
 }
 
 
-.module-list-item {
-    max-width: 32rem;
-    width: 200px;
-    /* Ajuste a largura conforme necessário */
-    margin: 2rem;
-    /* Remove a margem adicional */
+.grid-module-interne.module-list-item {
+    background-color: red;
 }
 
-.module-list-item:hover {
+.grid-module-interne.module-list-item:hover {
     transform: scale(1.02);
     box-shadow: -8px 8px 20px rgba(0, 0, 0, .3);
 }
