@@ -1,8 +1,13 @@
-{% extends "global/base_module.html" %}
-{% block title %}Home|Calçados Bilu{% endblock title %}
-{% block  content %} 
-<body>
-    {%include "ShoeStore/partials/header.html" %}
+{% extends "global/base.html" %}
+
+{% block title %}Modulos|Calçados Bilu{% endblock title %}
+
+{% block navbar %}
+{%include "ShoeStore/partials/navbar.html"%}
+{% endblock navbar %}
+
+
+{% block content %}
     <div class="module-block">
         <main class="main-content container">
             <div class="main-content main-content-list container">
@@ -10,9 +15,4 @@
             </div>
         </main>
     </div>
-
- 
-    <footer class="main-footer">
-    </footer>
-</body>
 {% endblock content %}
