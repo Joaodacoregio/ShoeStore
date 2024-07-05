@@ -1,5 +1,6 @@
-{% include "ShoeStore/partials/head.html" %}
+{% extends "global/base_module.html" %}
 
+{% block  content %} 
 <body>
     {%include "ShoeStore/partials/header.html" %}
     <div class="module-block">
@@ -14,3 +15,4 @@
     <footer class="main-footer">
     </footer>
 </body>
+{% endblock content %}
