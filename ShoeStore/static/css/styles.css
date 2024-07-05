@@ -66,11 +66,18 @@ body {
 .container-module{
     margin-top:8rem;
 }
-.grid-module {
+.grid-module-interne {
     display: grid;
     grid-template-columns: repeat(1,minmax(200px, 1fr));
     gap: 20px;
-    width: 50%;
+
+
+}
+.grid-module-external{
+    display: grid;
+    grid-template-columns:repeat(2,minmax(200px,1fr));
+
+    width: max-content;
 }
 
 .card {
