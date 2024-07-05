@@ -1,0 +1,48 @@
+<div class="tab-pane fade show active" id="aba-inicial" role="tabpanel" aria-labelledby="aba-inicial-tab">
+  <div class="container my-4 p-3">
+    <!-- Campo e botão para Vendedores -->
+    <div class="row mb-3 align-items-center">
+      <label for="vendedoresInput" class="col-auto col-form-label">Vendedor</label>
+      <div class="col">
+        <div class="input-group">
+          <input type="text" class="form-control" id="vendedoresInput" placeholder="Selecione um vendedor" readonly/>
+          <button class="btn btn-secondary" onclick="location.href='{% url 'selecionar_vendedor' %}'">Selecionar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Campo e botão para Clientes -->
+    <div class="row mb-3 align-items-center">
+      <label style="margin-left:20px;" for="clientesInput" class="col-auto col-form-label">Cliente</label>
+      <div class="col">
+        <div class="input-group">
+          <input type="text" class="form-control" id="clientesInput" placeholder="Selecione um cliente"  readonly/>
+          <button class="btn btn-secondary" onclick="location.href='{% url 'selecionar_cliente' %}'">Selecionar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Container para Produtos -->
+    <div class="card mb-3">
+      <div class="card-header bg-primary text-white">Produtos</div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Unitário</th>
+                <th scope="col">Desconto</th>
+                <th scope="col">Total</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="produtosContainer">
+              <!-- Produtos serão adicionados dinamicamente aqui -->
+            </tbody>
+          </table>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="location.href='{% url 'selecionar_produto' %}'">Adicionar novo produto</button>
+      </div>
+    </div>
+  </div>
+</div>

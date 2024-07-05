@@ -1,0 +1,46 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.btn-vendas i {
+    font-size: 32px;
+    /* Tamanho do ícone */
+}
+
+.btn-vendas {
+    font-size: 18px;
+    /* Tamanho do texto */
+}
+
+.decoration-none {
+    text-decoration: none;
+}
+
+.home-btn {
+    width: 150px;
+    overflow-wrap: break-word;
+}
+
+.form-control-sm {
+    font-size: 0.875rem;
+    /* Font size smaller */
+}
+
+.btn-sm {
+    font-size: 0.875rem;
+    /* Font size smaller */
+}
+
+.w-49 {
+    width: 49%;
+}
+

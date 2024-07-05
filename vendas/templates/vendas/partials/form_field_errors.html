@@ -1,0 +1,7 @@
+{% if errors %}
+  <div class="d-flex flex-column">
+    {% for error in errors %}
+      <span class="text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+{% endif %}

@@ -1,0 +1,10 @@
+{% extends 'vendas/partials/base.html' %}
+
+{% block content %}
+  <div class="d-flex justify-content-between mb-2">
+    <h3>Editar produto</h3>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">Deletar</button>
+  </div>
+  {% include 'vendas/produto/form_produto.html' %}
+  {% include 'vendas/partials/modal.html' with form_action_url=delete_url title='Deletar produto' body='Deseja realmente deletar este produto?' btn_text='Deletar' btn_class='danger' %}
+{% endblock %}

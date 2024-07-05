@@ -1,0 +1,50 @@
+<div class="tab-pane fade" id="aba-calculos" role="tabpanel" aria-labelledby="aba-calculos-tab">
+  <!-- Conteúdo da aba de cálculos -->
+  {% include 'vendas/partials/modal.html' with form_action_url='' title='Limpar venda' body='Deseja mesmo limpar a venda?' btn_text='Limpar' btn_class='danger' %}
+  {% include 'vendas/venda/modal_enviar_produto.html' %}
+  <div id="msgErroCampo" class="alert alert-danger" style="display:none;">Campos não foram preenchidos!</div>
+  <div id="msgModificaçãoDesconto" class="alert alert-success" style="display:none;">O desconto foi alterado com sucesso</div>
+  <div class="container my-4 p-3 border border-info rounded">
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <label for="parcelasSelect" class="col-sm-4 col-form-label">Parcelas</label>
+        <select class="form-select" id="parcelasSelect">
+          <option value="1">A vista</option>
+          <option value="2">1x</option>
+          <option value="3">2x</option>
+          <option value="4">3x</option>
+          <option value="5">4x</option>
+          <option value="6">5x</option>
+          <option value="7">6x</option>
+        </select>
+      </div>
+      <div class="col-sm-6">
+        <label for="comissaoInput" class="col-sm-2 col-form-label">Comissão</label>
+        <input type="text" class="form-control" id="comissaoInput" readonly />
+      </div>
+    </div>
+    <div class="container my-2 p-2 border rounded" style="font-size: smaller; width: 50%;">
+      <div class="row mb-3 text-center">
+        <label for="totalVendaInput" class="col-sm-12 col-form-label">Total da Venda</label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="totalVendaInput" readonly />
+        </div>
+      </div>
+      <div class="row mb-3 text-center">
+        <div>
+          <label class="col-sm-12 col-form-label">Desconto total%</label>
+        </div>
+        <div class="col-sm-12">
+          <div class="input-group">
+            <input type="text" class="form-control" id="descontoInput" />
+            <span class="material-symbols-outlined text-warning" id="triggerElement" data-bs-toggle="tooltip" data-bs-placement="top" title="Você pode alterar o desconto total!!" style="font-size:40px;">priority_high</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-4">
+      <button class="btn btn-primary btn-lg mx-2" type="button" data-bs-toggle="modal" data-bs-target="#sendModal">Concluir Venda</button>
+      <button class="btn btn-danger btn-lg mx-2" type="button" data-bs-toggle="modal" data-bs-target="#modal" onclick="limparVenda()">Limpar Venda</button>
+    </div>
+  </div>
+</div>

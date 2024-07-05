@@ -1,0 +1,21 @@
+{% extends 'vendas/partials/base.html' %}
+{% comment %}
+
+TODO: Ajustar as boxes 
+
+{% endcomment %}
+{% block content %}
+<div class="d-flex justify-content-between mb-2">
+    <h3>Editar cliente</h3>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">Deletar</button>
+</div>
+<div style="background-color: #f4f4f4; min-height: 50vh; display: flex; justify-content: center; align-items: center; padding: 10px;">
+
+    <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); width: 100%; max-width: 1400px; padding: 20px; text-align: left;">
+
+        {% include 'vendas/cliente/form_cliente.html' %}
+    </div>
+
+</div>
+{% include 'vendas/partials/modal.html' with form_action_url=delete_url title='Deletar cliente' body='Deseja realmente deletar este cliente?' btn_text='Deletar' btn_class='danger' %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'vendas/partials/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 id="XX">Selecione um Vendedor</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vendedor in vendedores %}
+            <tr>
+                <td>{{ vendedor.nome }}</td>
+                <td>{{ vendedor.cpf }}</td>
+                <td>
+                    <button class="btn btn-primary" onclick="selecionarVendedor('{{ vendedor.id }}')">Selecionar</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function selecionarVendedor(id) {
+        localStorage.setItem('vendedorId', id);
+        window.location.href = '{% url 'nova_venda' %}';
+    }
+</script>
+{% endblock %}

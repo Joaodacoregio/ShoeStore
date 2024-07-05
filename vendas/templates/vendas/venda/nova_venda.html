@@ -1,0 +1,37 @@
+{% extends 'vendas/partials/base.html' %}
+
+{% comment %}# TODO: Definir a lógica da aba cálculo{% endcomment %}
+
+{% block content %}
+  {% load static %}
+  <script src="{% static 'vendas/venda.js' %}"></script>
+  <script src="{% static 'vendas/calculos.js' %}"></script>
+
+  <div class="container mt-4">
+    <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="width:50px;height:50px;display: none; position: fixed; top: 50%; left: 50%; z-index: 1000;">
+      <span class="visually-hidden">Carregando...</span>
+    </div>
+
+    <!-- Modal personalizado para deletar produtos de maneira variavel -->
+    {% include 'vendas/venda/modal_remover_produto.html' %}
+
+    <!-- Abas -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="aba-inicial-tab" data-bs-toggle="tab" data-bs-target="#aba-inicial" type="button" role="tab" aria-controls="aba-inicial" aria-selected="true">Vender</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button onclick="calcular()" class="nav-link" id="aba-calculos-tab" data-bs-toggle="tab" data-bs-target="#aba-calculos" type="button" role="tab" aria-controls="aba-calculos" aria-selected="false">Cálculos</button>
+      </li>
+    </ul>
+
+    <!-- Conteúdo das Abas -->
+    <div class="tab-content shadow p-3 mb-5 bg-body rounded" id="myTabContent">
+      <!-- Aba Inicial -->
+      {% include 'vendas/venda/aba_venda.html' %}
+
+      <!-- Aba de Cálculos -->
+      {% include 'vendas/venda/aba_calculos.html' %}
+    </div>
+  </div>
+{% endblock %}

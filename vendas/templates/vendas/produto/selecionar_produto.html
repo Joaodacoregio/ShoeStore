@@ -1,0 +1,94 @@
+{% extends 'vendas/partials/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 id="XX">Selecione um Produto</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Referencia</th>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.referencia }}</td>
+                <td>{{ produto.preco }}</td>
+                <td>
+                    <button class="btn btn-primary" onclick="selecionarProduto('{{ produto.id }}')">Selecionar</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+        
+    // Inicializa a lista de produtos a partir do localStorage ou como uma lista vazia
+    const listaItens = JSON.parse(localStorage.getItem('listaItens')) || [];
+
+    /**
+    * Atualiza o localStorage com a lista de produtos fornecida.
+    * @param {Array} lista - Lista de produtos a ser armazenada.
+    */
+    function atualizarLocalStorage(lista) {
+        localStorage.setItem('listaItens', JSON.stringify(lista));
+    }
+
+    /**
+    * Atualiza ou adiciona um produto na lista de produtos.
+    * @param {Object} itemVenda - Produto a ser atualizado ou adicionado.
+    */
+    function alterarItemlistaItens(itemVenda) {
+        const index = listaItens.findIndex(item => item.produtoId === itemVenda.produtoId);
+
+        if (index !== -1) {
+            // Se o item já existe, atualiza  
+            listaItens[index] = itemVenda;
+        } else {
+            // Se o item não existe, adiciona um novo item
+            listaItens.push(itemVenda);
+        }
+
+        // Atualiza o localStorage
+        atualizarLocalStorage(listaItens);
+    }
+
+    /**
+    * Verifica se um produto existe na lista de produtos.
+    * @param {number} id - ID do produto a ser verificado.
+    * @returns {Object|null} - Retorna o produto encontrado ou null se não existir.
+    */
+    function itemExistente(id) {
+        return listaItens.find(item => item.produtoId === id) || null;
+    }
+
+    /**
+    * Seleciona um produto pelo ID, incrementa a quantidade se já existir ou adiciona um novo produto.
+    * @param {number} id - ID do produto a ser selecionado.
+    */
+    function selecionarProduto(id) {
+        let item = itemExistente(id);
+
+        if (item) {
+            item.quantidade++;
+            alterarItemlistaItens(item);
+            window.location.href = '{% url 'nova_venda' %}';
+        } else {
+            const itemVenda = {
+                produtoId: id,
+                quantidade: 1,
+                preco_unitario_venda:0,
+                desconto: 0
+            };
+            alterarItemlistaItens(itemVenda);
+            window.location.href = '{% url 'nova_venda' %}';
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+<form method="post">
+    {% csrf_token %}
+
+    <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Nome:</label>
+            {{ cliente_form.nome }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=cliente_form.nome.errors %}
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">CPF:</label>
+            {{ cliente_form.cpf }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=cliente_form.cpf.errors %}
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Data de Nascimento:</label>
+            {{ cliente_form.data_nascimento }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=cliente_form.data_nascimento.errors %}
+
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">E-mail:</label>
+            {{ cliente_form.email }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=cliente_form.email.errors %}
+
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Telefone:</label>
+            {{ cliente_form.telefone }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=cliente_form.telefone.errors %}
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Rua:</label>
+            {{ endereco_form.rua }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=endereco_form.rua.errors %}
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Cidade:</label>
+            {{ endereco_form.cidade }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=endereco_form.cidade.errors %}
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Estado:</label>
+            {{ endereco_form.estado }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=endereco_form.estado.errors %}
+        </div>
+
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">CEP:</label>
+            {{ endereco_form.cep }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=endereco_form.cep.errors %}
+        </div>
+
+        <div style="display: flex; align-items: flex-end;">
+            <button class='btn btn-primary btn-lg' type="submit" style="margin-left: 150px";>Salvar</button>
+            <button class='btn btn-danger btn-lg' type="button" onclick="location.href='{% url 'listar_clientes' %}'" style="margin-left: 10px;">Sair</button>
+        </div>
+    </div>
+
+</form>

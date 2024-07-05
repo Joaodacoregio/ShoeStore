@@ -1,0 +1,18 @@
+{% extends 'vendas/partials/base.html' %}
+{% comment %}
+
+TODO: Ajustar as boxes 
+
+{% endcomment %}
+{% block content %}
+<div style="background-color: #f4f4f4; min-height: 50vh; display: flex; justify-content: center; align-items: center; padding: 10px;">
+
+    <div style="min-height:50vh;background-color: #fff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); width: 100%; max-width: 1400px; padding: 20px; text-align: left;">
+
+        <h1 style="font-size: 2em; margin-bottom: 20px; color: #3498db;">Cadastro de Vendedor</h1>
+
+        {% include 'vendas/vendedor/form_vendedor.html' %}
+    </div>
+
+</div>
+{% endblock %}

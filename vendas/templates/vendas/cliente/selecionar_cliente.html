@@ -1,0 +1,36 @@
+{% extends 'vendas/partials/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 id="XX">Selecione um Cliente</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.cpf }}</td>
+                <td>{{ cliente.telefone }}</td>
+                <td>
+                    <button class="btn btn-primary" onclick="selecionarCliente('{{ cliente.id }}')">Selecionar</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function selecionarCliente(id) {
+        localStorage.setItem('clienteId', id);
+        window.location.href = '{% url 'nova_venda' %}';
+    }
+</script>
+{% endblock %}
