@@ -7,8 +7,8 @@
     <title>{% block title %}{% endblock title %}</title>
 
      {% comment %}# TODO: ver se isso esta certo{% endcomment %}
-    {%include "ShoeStore/partials/head.html"%}
-    {%include "vendas/partials/head.html"%}
+    {% block head %}{% endblock head %}
+
     
     </head>
     <body>
