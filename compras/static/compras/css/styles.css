@@ -65,17 +65,17 @@ body{
     border:none;
     outline: none;
     background:none;
-    padding: 1rem;
+    display: flex;
     transition: all 300ms ease-in-out;
 
 }
 
 .search-input{
     width: 100%;
-    padding: auto;
+    padding: 5px;
 }
 .search-button{
-    top: 0;
+    top:0;
     right: 0;
     position: absolute;
 }
