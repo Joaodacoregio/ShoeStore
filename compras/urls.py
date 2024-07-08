@@ -1,5 +1,10 @@
 from django.urls import path
-from .views import compras_home
+from . import views
+
+
+
 urlpatterns = [
-    path('',compras_home),
+    path('',views.compras_home),
+    path('produto/<int:id>',views.produto),
+    
 ]
