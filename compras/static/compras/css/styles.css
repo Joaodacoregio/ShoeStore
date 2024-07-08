@@ -140,3 +140,15 @@ body{
     transform: scale(1.02);
     box-shadow: -10px 10px 20px rgba(0, 0, 0, .4);
 }
+
+.product-title-container{
+    padding: var(--spacing-gutter-medium);
+    padding-bottom: 1px;
+}
+
+
+.product-info{
+    color: var(--color-gray-6);
+    font-size: 14px;
+    padding: 0 var(--spacing-gutter-medium);
+}
