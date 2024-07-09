@@ -45,132 +45,136 @@
 }
 
 body{
-    background-color: var(--color-gray-1);
+    background-color: var(--color-gray-1); /* Define a cor de fundo do corpo da página como `color-gray-1` */
 }
 
 .container {
-    max-width: 144rem;
-    margin: 0 auto;
-    padding: var(--spacing-gutter-medium);
+    max-width: 144rem; /* Define a largura máxima do container como 144rem */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: var(--spacing-gutter-medium); /* Define o espaçamento interno (padding) como `spacing-gutter-medium` */
 }
 
 .search-form{
-    border:.2rem solid var(--color-primary-dark);
-    max-width: 64rem;
-    margin: 0 auto;
-    border-radius: .4rem;
-    position: relative;
-    transition: all 300ms ease-in-out;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-
+    border: .2rem solid var(--color-primary-dark); /* Define a borda com 0.2rem de largura e cor `color-primary-dark` */
+    max-width: 64rem; /* Define a largura máxima do formulário de busca como 64rem */
+    margin: 0 auto; /* Centraliza o formulário de busca horizontalmente */
+    border-radius: .4rem; /* Define bordas arredondadas com raio de 0.4rem */
+    position: relative; /* Define a posição relativa para o formulário de busca */
+    transition: all 300ms ease-in-out; /* Define uma transição suave de 300ms para todas as propriedades */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra ao redor do formulário */
 }
-
 
 .search-input,
 .search-button{
-    border:none;
-    outline: none;
-    background:none;
-    display: flex;
-    transition: all 300ms ease-in-out;
-
+    border: none; /* Remove a borda do campo de input e do botão */
+    outline: none; /* Remove o contorno ao focar no campo de input e no botão */
+    background: none; /* Remove o fundo do campo de input e do botão */
+    display: flex; /* Define a exibição como flexível */
+    transition: all 300ms ease-in-out; /* Define uma transição suave de 300ms para todas as propriedades */
 }
 
 .search-input{
-    width: 100%;
-    padding: 5px;
-}
-.search-button{
-    top:0;
-    right: 0;
-    position: absolute;
+    width: 100%; /* Define a largura do campo de input como 100% */
+    padding: 5px; /* Define o espaçamento interno (padding) do campo de input */
 }
 
+.search-button{
+    top: 0; /* Alinha o botão no topo */
+    right: 0; /* Alinha o botão à direita */
+    position: absolute; /* Define a posição absoluta para o botão */
+}
 
 .search-button:focus{
-    outline: 1px solid var(--color-primary);
-    background-color:rgba(0,0,0,.05);
-    display: flex;
+    outline: 1px solid var(--color-primary); /* Adiciona um contorno ao botão quando está em foco */
+    background-color: rgba(0, 0, 0, .05); /* Define a cor de fundo do botão quando está em foco */
+    display: flex; /* Define a exibição como flexível */
 }
 
 .search-form:focus-within{
-    border-color: var(--color-primary);
-    background-color: white;
+    border-color: var(--color-primary); /* Muda a cor da borda do formulário quando algum elemento dentro dele está em foco */
+    background-color: white; /* Muda a cor de fundo do formulário quando algum elemento dentro dele está em foco */
 }
-.search-form:focus-within .search-button{
-    color : var(--color-primary);
 
+.search-form:focus-within .search-button{
+    color: var(--color-primary); /* Muda a cor do botão quando algum elemento dentro do formulário está em foco */
 }
 
 .main-content{
-    padding-top: 0;
+    padding-top: 0; /* Remove o espaçamento interno (padding) superior do conteúdo principal */
 }
 
 .product-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(340px, 1fr));
-    gap: 2rem;
+    display: grid; /* Define a exibição como grade */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Define a estrutura da grade com colunas adaptáveis */
+    gap: 2rem; /* Define o espaçamento entre os itens da grade */
 }
 
-
 .product{
-    text-align: left;
-    border-radius: .4rem;
-    border-radius: 8px;
-    font-family: var(--font-headings);
-    font-size: 24px;
-    background-color: white;
-    box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
-    transition: all 300ms ease-in-out;
-    transform: scale(1);
-    text-decoration: none;
-    overflow: hidden;
+    text-align: left; /* Alinha o texto à esquerda */
+    border-radius: .4rem; /* Define bordas arredondadas com raio de 0.4rem */
+    border-radius: 8px; /* Define bordas arredondadas com raio de 8px */
+    font-family: var(--font-headings); /* Define a fonte para `font-headings` */
+    font-size: 24px; /* Define o tamanho da fonte como 24px */
+    background-color: white; /* Define a cor de fundo como branco */
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, .2); /* Adiciona uma sombra ao redor do produto */
+    transition: all 300ms ease-in-out; /* Define uma transição suave de 300ms para todas as propriedades */
+    transform: scale(1); /* Define a escala inicial como 1 */
+    text-decoration: none; /* Remove a decoração do texto */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite do elemento */
+    height: 100%; /* Garante que o card ocupe a altura total disponível */
+    display: flex; /* Define a exibição como flexível */
+    flex-direction: column; /* Define a direção dos itens como coluna */
 }
 
 .product img{
-    max-width: 100%;
+    max-width: 100%; /* Define a largura máxima da imagem como 100% */
 }
 
- .product-title{
-    font-size: 1.6rem;
- }
+.product-title{
+    font-size: 1.6rem; /* Define o tamanho da fonte do título como 1.6rem */
+}
 
 .product-list-item{
-    max-width: 64rem;
+    max-width: 64rem; /* Define a largura máxima do item da lista de produtos como 64rem */
+    height: 100%; /* Garante que o item ocupe a altura total disponível */
+    display: flex; /* Define a exibição como flexível */
+    flex-direction: column; /* Define a direção dos itens como coluna */
 }
 
-
 .product-list-item:hover{
-    transform: scale(1.02);
-    box-shadow: -7px 7px 14px rgba(0, 0, 0, .4);
+    transform: scale(1.02); /* Aumenta a escala do item ao passar o mouse */
+    box-shadow: -7px 7px 14px rgba(0, 0, 0, .4); /* Adiciona uma sombra ao item ao passar o mouse */
 }
 
 .product-title-container{
-    padding: var(--spacing-gutter-medium);
-    padding-bottom: 1rem;
+    padding: var(--spacing-gutter-medium); /* Define o espaçamento interno (padding) como `spacing-gutter-medium` */
+    padding-bottom: 1rem; /* Define o espaçamento interno (padding) inferior como 1rem */
+    flex-grow: 1; /* Permite que o contêiner cresça livremente */
 }
 
-
 .product-info{
-    color: var(--color-gray-5);
-    font-size: 14px;
-    padding: 0 var(--spacing-gutter-medium);
-    padding-bottom: 1rem;
+    color: var(--color-gray-5); /* Define a cor do texto como `color-gray-5` */
+    font-size: 14px; /* Define o tamanho da fonte como 14px */
+    padding: 0 var(--spacing-gutter-medium); /* Define o espaçamento interno (padding) horizontal como `spacing-gutter-medium` */
+    padding-bottom: 1rem; /* Define o espaçamento interno (padding) inferior como 1rem */
+    flex-grow: 1; /* Permite que o contêiner cresça livremente */
+}
 
+.product-footer {
+    margin-top: auto; /* Empurra o rodapé para o final do card */
 }
 
 .product-footer a {
-    background-color: var(--color-primary-dark);
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    flex-flow: row nowrap;
-    color: white;
-    padding: .3rem 2rem;
-    transition: all 300ms ease-in-out;
+    background-color: var(--color-primary-dark); /* Define a cor de fundo do link como `color-primary-dark` */
+    text-decoration: none; /* Remove a decoração do texto do link */
+    display: block; /* Define a exibição como bloco */
+    text-align: center; /* Alinha o texto ao centro */
+    flex-flow: row nowrap; /* Define o fluxo dos itens em linha sem quebra */
+    color: white; /* Define a cor do texto como branco */
+    padding: .3rem 2rem; /* Define o espaçamento interno (padding) */
+    transition: all 300ms ease-in-out; /* Define uma transição suave de 300ms para todas as propriedades */
 }
 
 .product-footer a:hover{
-
-    filter: brightness(2);
+    filter: brightness(2); /* Aumenta o brilho do link ao passar o mouse */
 }
