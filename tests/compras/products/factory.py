@@ -17,7 +17,7 @@ def make_product():
         'title': fake.sentence(nb_words=6),
         "mark": fake.word(),
         'gender': fake.random_element(elements=('Masculino', 'Feminino')),
-        'type': fake.word(),
+        'category': fake.word(),
         'cover': {
             'url': 'https://loremflickr.com/%s/%s/shoes' % rand_ratio()}
         }
