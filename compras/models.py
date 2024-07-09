@@ -25,7 +25,7 @@ class Product(models.Model):
     mark = models.ForeignKey(
        Mark,on_delete=models.SET_NULL,null=True
     )
-    
+    img = models.ImageField(upload_to='compras/img/%Y/%m/%d/')
 
 class Shoes(Product):
   ...
