@@ -152,6 +152,11 @@ body{
     flex-grow: 1; /* Permite que o contêiner cresça livremente */
 }
 
+.product-title-container a{
+    text-decoration: none;
+    color: var(--color-primary-dark)
+}
+
 .product-info{
     color: var(--color-gray-5); /* Define a cor do texto como `color-gray-5` */
     font-size: 14px; /* Define o tamanho da fonte como 14px */

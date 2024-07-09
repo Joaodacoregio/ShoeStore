@@ -13,6 +13,7 @@ def rand_ratio():
 
 def make_product(): 
     return {
+        'id': randint(0,1000),
         'title': fake.sentence(nb_words=6),
         "mark": fake.word(),
         'gender': fake.random_element(elements=('Masculino', 'Feminino')),
