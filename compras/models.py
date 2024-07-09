@@ -1,5 +1,13 @@
 from django.db import models
 
+
+class Category(models.Model):
+   name = models.CharField(max_length=16)
+
+class Mark(models.Model):
+   name = models.CharField(max_length=32)
+
+
 class Product(models.Model):
     GENDER_CHOICES = [
         ('M', 'Masculino'),
@@ -8,10 +16,16 @@ class Product(models.Model):
 
     title = models.CharField(max_length=64)
     gener = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    mark = models.CharField(max_length=32)
     created_dt = models.DateTimeField(auto_now_add=True)
     update_dt = models.DateTimeField(auto_now=True)
-    #img = models.ImageField(upload_to='compras/img/%Y/%m/%d/')
+
+    category = models.ForeignKey(
+       to=Category,on_delete=models.SET_NULL,null=True
+    )
+    mark = models.ForeignKey(
+       Mark,on_delete=models.SET_NULL,null=True
+    )
+    
 
 class Shoes(Product):
   ...
