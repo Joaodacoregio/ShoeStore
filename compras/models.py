@@ -2,7 +2,6 @@ from django.db import models
 #https://docs.djangoproject.com/pt-br/3.2/ref/models/fields/
 
 from django.db.models.signals import pre_save
- 
 from django.dispatch import receiver
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from io import BytesIO

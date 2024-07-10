@@ -181,5 +181,10 @@ body{
 }
 
 .product-footer a:hover{
+    text-decoration: none;
     filter: brightness(2); /* Aumenta o brilho do link ao passar o mouse */
+}
+
+.product-title-container a:hover{
+    text-decoration: none;
 }
