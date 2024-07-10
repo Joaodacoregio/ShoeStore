@@ -1,10 +1,11 @@
 from django.db import models
+#https://docs.djangoproject.com/pt-br/3.2/ref/models/fields/
 
 
-class Category(models.Model):
+class Category(models.Model):  
    name = models.CharField(max_length=16)
 
-class Mark(models.Model):
+class Mark(models.Model):  
    name = models.CharField(max_length=32)
 
 

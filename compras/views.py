@@ -11,3 +11,7 @@ def compras_home(request):
 
 def produto(request,id):
     return render(request,"compras/pages/product-view.html")  
+
+
+def cadastrar_marca(request):
+    return render(request,"compras/pages/cadastrar_marca.html")

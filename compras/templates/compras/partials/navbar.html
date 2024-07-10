@@ -5,5 +5,13 @@
 {% endblock logo %}
 
 {% block itens %}
-<!--adicionar itens no navbar-->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Cadastros
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="{%url "compras:cadastrar_marca"%}">Marca</a>
+      <a class="dropdown-item" href="">Categoria</a>
+    </div>
+  </li>
 {% endblock itens %}
