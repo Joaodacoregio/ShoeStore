@@ -16,7 +16,7 @@ class Product(models.Model):
     ]
 
     title = models.CharField(max_length=64)
-    title_slug = models.CharField(max_length=64,default="")
+    title_slug = models.SlugField(max_length=64,default="")
     gener = models.CharField(max_length=1, choices=GENDER_CHOICES)
     created_dt = models.DateTimeField(auto_now_add=True)
     update_dt = models.DateTimeField(auto_now=True)
@@ -28,6 +28,9 @@ class Product(models.Model):
        Mark,on_delete=models.SET_NULL,null=True
     )
     img = models.ImageField(upload_to='compras/img/%Y/%m/%d/')
+
+    def __str__(self) -> str:
+       return self.title
 
 class Shoes(Product):
   ...
