@@ -105,7 +105,7 @@ body{
 
 .product-list{
     display: grid; /* Define a exibição como grade */
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Define a estrutura da grade com colunas adaptáveis */
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr)); /* Define a estrutura da grade com colunas adaptáveis */
     gap: 2rem; /* Define o espaçamento entre os itens da grade */
 }
 
@@ -149,7 +149,7 @@ body{
 .product-title-container{
     padding: var(--spacing-gutter-medium); /* Define o espaçamento interno (padding) como `spacing-gutter-medium` */
     padding-bottom: 1rem; /* Define o espaçamento interno (padding) inferior como 1rem */
-    flex-grow: 1; /* Permite que o contêiner cresça livremente */
+
 }
 
 .product-title-container a{
