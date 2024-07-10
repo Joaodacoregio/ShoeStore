@@ -5,9 +5,14 @@ from django.db import models
 class Category(models.Model):  
    name = models.CharField(max_length=16)
 
+   def __str__(self) -> str:
+      return self.name
+   
 class Mark(models.Model):  
    name = models.CharField(max_length=32)
 
+   def __str__(self) -> str:
+      return self.name
 
 class Product(models.Model):
     GENDER_CHOICES = [

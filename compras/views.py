@@ -3,7 +3,7 @@ import logging
 from django.shortcuts import render
 from tests.compras.products.factory import make_product
 from .forms import CategoryForm,MarcaForm
-from .models import Mark,Category
+from .models import Mark,Category,Product
 from django.contrib import messages
 from django.shortcuts import  render
 
@@ -12,8 +12,9 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def compras_home(request):
+    products = Product.objects.all().order_by("-id")
     return render(request,"compras/pages/compras_home.html" , context={
-        'products':[make_product for _ in range(10)],
+        'products':products,
     })  
 
 
