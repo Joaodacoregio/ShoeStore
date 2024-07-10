@@ -2,8 +2,8 @@ import logging
 
 from django.shortcuts import render
 from tests.compras.products.factory import make_product
-from .forms import MarcaForm
-from .models import Mark
+from .forms import CategoryForm,MarcaForm
+from .models import Mark,Category
 from django.contrib import messages
 from django.shortcuts import  render
 
@@ -39,5 +39,26 @@ def cadastrar_marca(request):
     return render(
         request, 
         "compras/pages/cadastrar_marca.html", 
+        {"form": form}
+    )
+
+
+def cadastrar_categoria(request):
+    if request.method == "POST":
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            try:
+                nova_marca = Category(name=form.cleaned_data["name"])
+                nova_marca.save()
+                messages.success(request, "Categoria cadastrada com sucesso!")
+            except Exception as e:
+                logger.exception(e)
+                messages.error(request, "Erro ao criar categoria!")
+    else:
+        form = CategoryForm()
+    
+    return render(
+        request, 
+        "compras/pages/cadastrar_categoria.html", 
         {"form": form}
     )
