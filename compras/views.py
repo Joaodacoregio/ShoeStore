@@ -48,8 +48,8 @@ def cadastrar_categoria(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             try:
-                nova_marca = Category(name=form.cleaned_data["name"])
-                nova_marca.save()
+                nova_categoria = Category(name=form.cleaned_data["name"])
+                nova_categoria.save()
                 messages.success(request, "Categoria cadastrada com sucesso!")
             except Exception as e:
                 logger.exception(e)
