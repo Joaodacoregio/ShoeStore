@@ -16,6 +16,7 @@ class Product(models.Model):
     ]
 
     title = models.CharField(max_length=64)
+    title_slug = models.CharField(max_length=64,default="")
     gener = models.CharField(max_length=1, choices=GENDER_CHOICES)
     created_dt = models.DateTimeField(auto_now_add=True)
     update_dt = models.DateTimeField(auto_now=True)
