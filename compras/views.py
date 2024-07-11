@@ -1,5 +1,5 @@
 import logging
-
+from django.http import Http404
 from django.shortcuts import render
 from tests.compras.products.factory import make_product
 from .forms import CategoryForm,MarcaForm
@@ -70,25 +70,33 @@ def cadastrar_categoria(request):
 def filtrar_marca(request,marca_id):
     products = Product.objects.filter(mark__id=marca_id).order_by("-id")
 
-    mark_title = getattr(products.first(),"mark",None)
+    if not products:
+        raise Http404("Page not found")
 
 
     return render(request,"compras/pages/compras_home.html" , context={
         'products':products,
-        "title": f"{mark_title.name}|"
+        "title": f"{products.first().mark.name}|"
     })  
 
 
 def filtrar_categoria(request,categoria_id):
     products = Product.objects.filter(category__id=categoria_id).order_by("-id")
-    category_title = getattr(products.first(),"category",None)
+    if not products:
+        raise Http404("Page not found")
+ 
+    
     return render(request,"compras/pages/compras_home.html" , context={
         'products':products,
-        "title": f"{category_title.name}|",
+        "title": f"{products.first().category.name}|",
     })  
 
 def filtrar_genero(request,genero):
     products = Product.objects.filter(gener = genero).order_by("-id")
+
+    if not products:
+        raise Http404("Page not found")
+
     return render(request,"compras/pages/compras_home.html" , context={
         'products':products,
         "title":f"{products.first().gener}|"
