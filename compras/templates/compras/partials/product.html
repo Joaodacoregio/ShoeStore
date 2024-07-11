@@ -6,30 +6,39 @@
     </div>
     <div class="product-title-container">
         <a href="{% url "compras:product" product.id%}">
-            <h3>{{product.title}}</h3   >
+            <h4>{{product.title}}</h4   >
         </a>
     </div>
 
     <div class="product-info">
         <span class="product-info-item">
-            <span class="material-symbols-outlined">
-                verified_user
-                </span>
-            {{product.mark}}
+            <a href=""> 
+                <span class="material-symbols-outlined">
+                    verified_user
+                    </span>
+                {{product.mark}}
+            </a>
         </span>
         <span class="product-info-item">
-            <span class="material-symbols-outlined">
-                wc
-                </span>
-            {{product.gener}}
+            <a href=""> 
+                <span class="material-symbols-outlined">
+                    wc
+                    </span>
+                {{product.gener}}
+            </a>
         </span>
         <span class="product-info-item">
-            <span class="material-symbols-outlined">
-                footprint
+            <a  href=""> 
+                <span class="material-symbols-outlined">
+                    footprint
                 </span>
-            {{product.category}}
+                    {{product.category}}
+            </a>
         </span>
+             
     </div>
+
+
     <footer class="product-footer">
         <a href="{% url "compras:product" product.id %}"> 
             <span class="material-symbols-outlined">
