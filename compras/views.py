@@ -80,4 +80,11 @@ def filtrar_categoria(request,categoria_id):
         'products':products,
     })  
 
+def filtrar_genero(request,genero):
+    products = Product.objects.filter(gener = genero).order_by("-id")
+    return render(request,"compras/pages/compras_home.html" , context={
+        'products':products,
+    })  
+
+
 
