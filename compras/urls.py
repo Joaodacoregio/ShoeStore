@@ -10,6 +10,10 @@ urlpatterns = [
 
     #Cadastros
     path('cadastro/marca' , views.cadastrar_marca , name="cadastrar_marca"),
-    path('cadastro/categoria' , views.cadastrar_categoria, name="cadastrar_categoria")
+    path('cadastro/categoria' , views.cadastrar_categoria, name="cadastrar_categoria"),
+
+
+    #filtros
+    path('produto/marca/<int:marca_id>/',views.filtrar_marca , name="filtrar_marca")
     
 ]

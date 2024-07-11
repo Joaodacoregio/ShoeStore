@@ -63,3 +63,11 @@ def cadastrar_categoria(request):
         "compras/pages/cadastrar_categoria.html", 
         {"form": form}
     )
+
+def filtrar_marca(request,marca_id):
+    products = Product.objects.filter(mark__id=marca_id).order_by("-id")
+    return render(request,"compras/pages/compras_home.html" , context={
+        'products':products,
+    })  
+
+
