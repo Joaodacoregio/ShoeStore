@@ -69,21 +69,29 @@ def cadastrar_categoria(request):
 #filter
 def filtrar_marca(request,marca_id):
     products = Product.objects.filter(mark__id=marca_id).order_by("-id")
+
+    mark_title = getattr(products.first(),"mark",None)
+
+
     return render(request,"compras/pages/compras_home.html" , context={
         'products':products,
+        "title": f"{mark_title.name}|"
     })  
 
 
 def filtrar_categoria(request,categoria_id):
     products = Product.objects.filter(category__id=categoria_id).order_by("-id")
+    category_title = getattr(products.first(),"category",None)
     return render(request,"compras/pages/compras_home.html" , context={
         'products':products,
+        "title": f"{category_title.name}|",
     })  
 
 def filtrar_genero(request,genero):
     products = Product.objects.filter(gener = genero).order_by("-id")
     return render(request,"compras/pages/compras_home.html" , context={
         'products':products,
+        "title":f"{products.first().gener}|"
     })  
 
 

@@ -13,7 +13,7 @@ urlpatterns = [
     path('cadastro/categoria' , views.cadastrar_categoria, name="cadastrar_categoria"),
 
 
-    #filtros
+    #Query set https://docs.djangoproject.com/pt-br/3.2/ref/models/querysets/ (consultas)
     path('produto/marca/<int:marca_id>/',views.filtrar_marca , name="filtrar_marca"),
     path('produto/categoria/<int:categoria_id>',views.filtrar_categoria , name="filtrar_categoria"),
     path('produto/genero/<slug:genero>',views.filtrar_genero , name="filtrar_genero"),
