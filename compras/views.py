@@ -1,6 +1,7 @@
 import logging
 
-
+  
+  
 from django.shortcuts import get_list_or_404
 from django.shortcuts import render
 from tests.compras.products.factory import make_product
