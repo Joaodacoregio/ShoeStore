@@ -11,6 +11,7 @@ urlpatterns = [
     #Cadastros
     path('cadastro/marca' , views.cadastrar_marca , name="cadastrar_marca"),
     path('cadastro/categoria' , views.cadastrar_categoria, name="cadastrar_categoria"),
+    path('cadastro/produto' , views.cadastrar_produto, name="cadastrar_produto"),
 
 
     #Query set https://docs.djangoproject.com/pt-br/3.2/ref/models/querysets/ (consultas)

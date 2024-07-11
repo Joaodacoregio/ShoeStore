@@ -68,6 +68,13 @@ def cadastrar_categoria(request):
     )
 
 
+def cadastrar_produto(request):
+    return render(
+        request, 
+        "compras/pages/cadastrar_produto.html", 
+#        {"form": form}
+    )
+
 
 #filter
 def filtrar_marca(request,marca_id):
