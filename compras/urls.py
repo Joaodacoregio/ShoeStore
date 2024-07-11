@@ -14,6 +14,7 @@ urlpatterns = [
 
 
     #filtros
-    path('produto/marca/<int:marca_id>/',views.filtrar_marca , name="filtrar_marca")
+    path('produto/marca/<int:marca_id>/',views.filtrar_marca , name="filtrar_marca"),
+    path('produto/categoria/<int:categoria_id>',views.filtrar_categoria , name="filtrar_categoria"),
     
 ]
