@@ -19,10 +19,10 @@ class Product(models.Model):
     gener = models.CharField(max_length=10, choices=GENDER_CHOICES)
     created_dt = models.DateTimeField(auto_now_add=True)
     update_dt = models.DateTimeField(auto_now=True)
-    price = models.DecimalField(max_digits=10,decimal_places=2)
-    color = models.CharField(max_length=32)
-    reference = models.CharField(max_length=10)
-    size = models.IntegerField()
+    price = models.DecimalField(max_digits=10,decimal_places=2,default=0)
+    color = models.CharField(max_length=32,default="")
+    reference = models.CharField(max_length=10,default="")
+    size = models.IntegerField(default=0)
 
     category = models.ForeignKey(
        to=Category,on_delete=models.SET_NULL,null=True

@@ -35,7 +35,7 @@ def cadastrar_produto(request) -> render:
     
     return render(
         request=request,
-        template_name="compras/pages/cadastrar_produto.html",
+        template_name="compras/pages/cadastro/cadastrar_produto.html",
         context={"form": form},
     )
 
