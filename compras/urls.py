@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
 
 app_name = "compras"
@@ -9,9 +9,9 @@ urlpatterns = [
 
 
     #Cadastros
-    path('cadastro/marca' , views.cadastrar_marca , name="cadastrar_marca"),
-    path('cadastro/categoria' , views.cadastrar_categoria, name="cadastrar_categoria"),
-    path('cadastro/produto' , views.cadastrar_produto, name="cadastrar_produto"),
+    path('cadastro/marca/', include('compras.cadastro.marca.urls')),
+    path('cadastro/categoria/', include('compras.cadastro.categoria.urls')),
+    path('cadastro/produto/', include('compras.cadastro.produto.urls')),
 
 
     #Query set https://docs.djangoproject.com/pt-br/3.2/ref/models/querysets/ (consultas)
