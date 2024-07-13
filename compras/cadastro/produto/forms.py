@@ -40,7 +40,7 @@ class ProductForm(forms.ModelForm):
         max_digits=5,
         decimal_places=2,
         required=True,
-        widget=forms.NumberInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'})
     )
     color = forms.ChoiceField(
         choices=COLOR_BASIC_CHOICES,

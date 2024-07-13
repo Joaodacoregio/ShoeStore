@@ -18,11 +18,19 @@ def cadastrar_produto(request:HttpRequest) -> render:
     #TODO: Fazer o tratamento de erros pela sessão
     produto_data_form = request.session.get("produto_data_form",None)
     form = ProductForm(produto_data_form)
-    
+
+
+
+    categorias = [
+        {'id': 'feminino', 'nome': 'Feminino', 'min': 34, 'max': 42, 'tamanhos': range(34, 43)},
+        {'id': 'masculino', 'nome': 'Masculino', 'min': 36, 'max': 48, 'tamanhos': range(36, 49)},
+        {'id': 'infantil', 'nome': 'Infantil', 'min': 16, 'max': 34, 'tamanhos': range(16, 35)}
+    ]
     return render(
         request=request,
         template_name="compras/pages/cadastro/produto/cadastrar_produto.html",
-        context={"form": form},
+        context={"form": form,
+                 "categorias":categorias},
     )
 
 #Envia o produto  
@@ -60,3 +68,5 @@ def enviar_produto(request):
         
     return redirect("compras:cadastrar_produto")
     
+
+ 

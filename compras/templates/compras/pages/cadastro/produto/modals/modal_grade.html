@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <!-- Cabeçalho do Modal -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Selecione o Tamanho</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Corpo do Modal -->
+      <div class="modal-body">
+        <!-- Abas de seleção -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          {% for categoria in categorias %}
+          <li class="nav-item">
+            <a class="nav-link {% if forloop.first %}active{% endif %}" id="{{ categoria.id }}-tab" data-toggle="tab" href="#{{ categoria.id }}" role="tab" aria-controls="{{ categoria.id }}" aria-selected="{{ forloop.first }}">{{ categoria.nome }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <!-- Conteúdo das abas -->
+        <div class="tab-content" id="myTabContent">
+          {% for categoria in categorias %}
+          <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="{{ categoria.id }}" role="tabpanel" aria-labelledby="{{ categoria.id }}-tab">
+            <h4>{{ categoria.nome }} ({{ categoria.min }} ao {{ categoria.max }})</h4>
+            <div class="row">
+              {% for tamanho in categoria.tamanhos %}
+              <div class="col-md-3">
+                <div class="text-center">
+                  <div class="box">
+                    <h5 style="margin-top: 0.5em; opacity: 0.6;">{{ tamanho }}</h5>
+                    <button class="btn btn-lg btn-primary btn-add" data-type="plus" data-field="quant[{{ forloop.parentloop.counter0 }}][{{ forloop.counter0 }}]">+</button>
+                    <span class="size-number" style="font-size: 2em;">0</span>
+                    <button class="btn btn-lg btn-secondary btn-remove" data-type="minus" data-field="quant[{{ forloop.parentloop.counter0 }}][{{ forloop.counter0 }}]">-</button>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Rodapé do Modal -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>

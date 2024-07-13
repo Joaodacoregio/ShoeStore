@@ -17,7 +17,10 @@
    
            <div>
                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Tamanho:</label>
-               {{ form.size }}
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                {{ form.size }}Selecionar
+              </button>
+  
                {% include 'vendas/partials/form_field_errors.html' with errors=form.size.errors %}
            </div>
    

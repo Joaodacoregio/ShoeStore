@@ -1,10 +1,14 @@
 {% extends "compras/partials/base.html" %}
 
 {% block content %}
+ 
+ 
+
+
 <div style="background-color: #f4f4f4; min-height: 50vh; display: flex; justify-content: center; align-items: center; padding: 10px;">
    <div style="background-color: #fff; border-radius: 10px; box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); width: 100%; max-width: 1400px; padding: 20px; text-align: left;">
        <h1 style="font-size: 2em; margin-bottom: 20px; color: #3498db;">Cadastro de Produto</h1>
-
+        {% include "compras/pages/cadastro/produto/modals/modal_grade.html" %}
        <form action="{% url "compras:enviar_produto" %}" method="post">
            {% csrf_token %}
            <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -18,10 +22,10 @@
 
            <div class="tab-content shadow p-3 mb-5 bg-body rounded" id="myTabContent">
                <div class="tab-pane fade show active" id="aba-inicial" role="tabpanel" aria-labelledby="aba-inicial-tab">
-                   {% include 'compras/pages/cadastro/produto/form_cadastro_produto.html' %}
+                   {% include 'compras/pages/cadastro/produto/aba_produto.html' %}
                </div>
                <div class="tab-pane fade" id="aba-comercial" role="tabpanel" aria-labelledby="aba-comercial-tab">
-                   {% include 'compras/pages/cadastro/produto/form_cadastro_comercial.html' %}
+                   {% include 'compras/pages/cadastro/produto/aba_comercial.html' %}
                </div>
            </div>
        </form>
@@ -33,6 +37,7 @@
 </div>
 
 
+ 
 
 
 {% endblock content %}
