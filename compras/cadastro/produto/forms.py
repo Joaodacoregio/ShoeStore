@@ -3,12 +3,28 @@ from ..categoria.models import Category
 from ..marca.models import Mark
 from .models import Product
 
+COLOR_BASIC_CHOICES = [
+    ('vermelho', 'Vermelho'),
+    ('azul', 'Azul'),
+    ('verde', 'Verde'),
+    ('amarelo', 'Amarelo'),
+    ('preto', 'Preto'),
+    ('branco', 'Branco'),
+]
+
+
+GENERO_CHOICES = [
+        ('Masculino', 'Masculino'),
+        ('Feminino', 'Feminino'),
+    ]
+
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = [
             "title", "reference", "category", "mark", "gener", "size", 
-            "color", "title_slug", "price", "img"
+            "color", "sale_price", "img",'cost_price','profit_margin',
         ]
 
     title = forms.CharField(
@@ -17,19 +33,8 @@ class ProductForm(forms.ModelForm):
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
-    title_slug = forms.SlugField(
-        label="Nome do produto slug",
-        max_length=255,
-        required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control'})
-    )
-    price = forms.DecimalField(
-        label="Preço",
-        max_digits=10,
-        decimal_places=2,
-        required=True,
-        widget=forms.NumberInput(attrs={'class': 'form-control'})
-    )
+ 
+ 
     size = forms.DecimalField(
         label="Tamanho",
         max_digits=5,
@@ -37,11 +42,10 @@ class ProductForm(forms.ModelForm):
         required=True,
         widget=forms.NumberInput(attrs={'class': 'form-control'})
     )
-    color = forms.CharField(
-        label="Cor",
-        max_length=255,
-        required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+    color = forms.ChoiceField(
+        choices=COLOR_BASIC_CHOICES,
+        label='Cor',
+        widget=forms.Select(attrs={'class': 'form-control'})
     )
     category = forms.ModelChoiceField(
         queryset=Category.objects.all(),
@@ -65,12 +69,33 @@ class ProductForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
 
-    GENERO_CHOICES = [
-        ('Masculino', 'Masculino'),
-        ('Feminino', 'Feminino'),
-    ]
+ 
     gener = forms.ChoiceField(
         choices=GENERO_CHOICES,
         label='Gênero',
         widget=forms.Select(attrs={'class': 'form-control'})
     )
+
+    sale_price = forms.DecimalField(
+        label="Preço de venda",
+        max_digits=10,
+        decimal_places=2,
+        required=True,
+        widget=forms.NumberInput(attrs={'class': 'form-control'})
+    )
+    profit_margin = forms.DecimalField(
+        label="Margem de lucro(%)",
+        max_digits=10,
+        decimal_places=2,
+        required=True,
+        widget=forms.NumberInput(attrs={'class': 'form-control'})
+    )
+
+    cost_price = forms.DecimalField(
+        label="Preço de custo",
+        max_digits=10,
+        decimal_places=2,
+        required=True,
+        widget=forms.NumberInput(attrs={'class': 'form-control'})
+    )
+ 

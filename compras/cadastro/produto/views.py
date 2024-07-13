@@ -26,29 +26,37 @@ def cadastrar_produto(request:HttpRequest) -> render:
     )
 
 #Envia o produto  
-def enviar_produto(request:HttpRequest)->redirect:
-    #Navegador faz GET por padrão
+def enviar_produto(request):
+    # Navegador faz GET por padrão
     if not request.POST:
         raise Http404()
     
-    #Armazena na sessão o POST para tratamento de erros 
+    # Armazena na sessão o POST para tratamento de erros 
     POST = request.POST
-    request.session["produto_form_data"]=POST
-
+    request.session["produto_form_data"] = POST
+ 
     form = ProductForm(request.POST, request.FILES)
     if form.is_valid():
-            try:
-                novo_produto = form.save()  # Não salva ainda no banco
-                novo_produto.save()
-                messages.success(
-                    request=request,
-                    message="Produto criado com sucesso!",
-                )
-            except Exception as e:
-                logger.exception(msg=e)
-                messages.error(
-                    request=request,
-                    message="Erro ao criar produto",
-                )
+        try:
+            novo_produto = form.save()
+            novo_produto.save()
+            messages.success(
+                request=request,
+                message="Produto criado com sucesso!",
+            )
+        except Exception as e:
+            logger.exception("Erro ao criar produto: %s", e)
+            messages.error(
+                request=request,
+                message="Erro ao criar produto",
+            )
+    else:
+        error_message = "Formulário inválido: " + str(form.errors)
+        logger.error(error_message)
+        messages.error(
+            request=request,
+            message="Erro no formulário: " + str(form.errors),
+        )
+        
     return redirect("compras:cadastrar_produto")
     

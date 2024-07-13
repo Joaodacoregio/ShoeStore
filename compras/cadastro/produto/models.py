@@ -8,19 +8,32 @@ from io import BytesIO
 from PIL import Image
 import sys
 
-class Product(models.Model):
-    GENDER_CHOICES = [
+COLOR_BASIC_CHOICES = [
+    ('vermelho', 'Vermelho'),
+    ('azul', 'Azul'),
+    ('verde', 'Verde'),
+    ('amarelo', 'Amarelo'),
+    ('preto', 'Preto'),
+    ('branco', 'Branco'),
+]
+
+GENDER_CHOICES = [
         ('Masculino', 'Masculino'),
         ('Feminino', 'Feminino'),
     ]
+
+class Product(models.Model):
+ 
 
     title = models.CharField(max_length=64)
     title_slug = models.SlugField(max_length=64,default="")
     gener = models.CharField(max_length=10, choices=GENDER_CHOICES)
     created_dt = models.DateTimeField(auto_now_add=True)
     update_dt = models.DateTimeField(auto_now=True)
-    price = models.DecimalField(max_digits=10,decimal_places=2,default=0)
-    color = models.CharField(max_length=32,default="")
+    sale_price = models.DecimalField(max_digits=10,decimal_places=2,default=0)
+    cost_price = models.DecimalField(max_digits=10,decimal_places=2,default=0)
+    profit_margin = models.DecimalField(max_digits=10,decimal_places=2,default=0)
+    color = models.CharField(max_length=10, choices=COLOR_BASIC_CHOICES)
     reference = models.CharField(max_length=10,default="")
     size = models.IntegerField(default=0)
 

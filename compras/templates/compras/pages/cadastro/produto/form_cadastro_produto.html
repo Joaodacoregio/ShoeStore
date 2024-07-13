@@ -1,7 +1,4 @@
-<div class="form-container">
-    <form action = "{% url "compras:enviar_produto" %}"method="post" enctype="multipart/form-data">
-       {% csrf_token %}
-   
+
        <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
    
            <div>
@@ -16,17 +13,7 @@
                 {% include 'vendas/partials/form_field_errors.html' with errors=form.reference.errors %}
             </div>
    
-           <div>
-               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Nome do produto slug:</label>
-               {{ form.title_slug }}
-               {% include 'vendas/partials/form_field_errors.html' with errors=form.title_slug.errors %}
-           </div>
-   
-           <div>
-               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço:</label>
-               {{ form.price }}
-               {% include 'vendas/partials/form_field_errors.html' with errors=form.price.errors %}
-           </div>
+ 
    
            <div>
                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Tamanho:</label>
@@ -71,6 +58,3 @@
                <button class='btn btn-danger btn-lg' type="button" onclick="location.href='{% url 'compras:compras_home' %}'" style="margin-left: 10px;">Sair</button>
            </div>
        </div>
-   
-   </form>
- </div>

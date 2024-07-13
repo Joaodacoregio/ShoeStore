@@ -1,0 +1,29 @@
+<div class="form-container">
+       <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço de custo:</label>
+               {{ form.cost_price }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
+           </div>
+
+           <div>
+                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Margem de lucro:</label>
+                {{ form.profit_margin }}
+                {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
+            </div>
+
+           <div>
+                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço de venda:</label>
+                {{ form.sale_price }}
+                {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
+          </div>
+
+
+   
+           <div style="display: flex; align-items: flex-end;">
+               <button class='btn btn-primary btn-lg' type="submit" style="margin-left: 150px;">Salvar</button>
+               <button class='btn btn-danger btn-lg' type="button" onclick="location.href='{% url 'compras:compras_home' %}'" style="margin-left: 10px;">Sair</button>
+           </div>
+       </div>
+</div>
