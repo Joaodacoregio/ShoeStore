@@ -2,7 +2,7 @@
 
 {% block content %}
 <div style="background-color: #f4f4f4; min-height: 50vh; display: flex; justify-content: center; align-items: center; padding: 10px;">
-   <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); width: 100%; max-width: 1400px; padding: 20px; text-align: left;">
+   <div style="background-color: #fff; border-radius: 10px; box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); width: 100%; max-width: 1400px; padding: 20px; text-align: left;">
        <h1 style="font-size: 2em; margin-bottom: 20px; color: #3498db;">Cadastro de Produto</h1>
 
        <form action="{% url "compras:enviar_produto" %}" method="post">
@@ -24,13 +24,15 @@
                    {% include 'compras/pages/cadastro/produto/form_cadastro_comercial.html' %}
                </div>
            </div>
-
-           <div style="text-align: right;">
-               <button type="submit" class="btn btn-primary">Enviar</button>
-           </div>
        </form>
+       <div style="display: flex; align-items: flex-end;">
+            <button class='btn btn-primary btn-lg' type="submit" style="margin-left: 150px;">Salvar</button>
+            <button class='btn btn-danger btn-lg' type="button" onclick="location.href='{% url 'compras:compras_home' %}'" style="margin-left: 10px;">Sair</button>
+        </div>
    </div>
 </div>
+
+
 
 
 {% endblock content %}

@@ -26,6 +26,6 @@ def cadastrar_marca(request):
     
     return render(
         request, 
-        "compras/pages/cadastro/cadastrar_marca.html", 
+        "compras/pages/cadastro/marca/cadastrar_marca.html", 
         {"form": form}
     )

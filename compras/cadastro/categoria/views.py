@@ -27,6 +27,6 @@ def cadastrar_categoria(request):
     
     return render(
         request, 
-        "compras/pages/cadastro/cadastrar_categoria.html", 
+        "compras/pages/cadastro/categoria/cadastrar_categoria.html", 
         {"form": form}
     )
