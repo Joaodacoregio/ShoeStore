@@ -4,7 +4,7 @@ from . import views
 app_name = "compras"
 
 urlpatterns = [
-    path('',views.compras_home),
+    path('',views.compras_home , name="compras_home"),
     path('produto/<int:id>',views.produto , name="product"),
 
 

@@ -1,0 +1,76 @@
+<div class="form-container">
+    <form action = "{% url "compras:enviar_produto" %}"method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+   
+       <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Nome do produto:</label>
+               {{ form.title }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
+           </div>
+
+           <div>
+                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Referencia:</label>
+                {{ form.reference }}
+                {% include 'vendas/partials/form_field_errors.html' with errors=form.reference.errors %}
+            </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Nome do produto slug:</label>
+               {{ form.title_slug }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.title_slug.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço:</label>
+               {{ form.price }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.price.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Tamanho:</label>
+               {{ form.size }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.size.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Cor:</label>
+               {{ form.color }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.color.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Categoria:</label>
+               {{ form.category }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.category.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Marca:</label>
+               {{ form.mark }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.mark.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Gênero:</label>
+               {{ form.gener }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.gener.errors %}
+           </div>
+   
+           <div>
+               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Imagem:</label>
+               {{ form.img }}
+               {% include 'vendas/partials/form_field_errors.html' with errors=form.img.errors %}
+           </div>
+   
+
+   
+           <div style="display: flex; align-items: flex-end;">
+               <button class='btn btn-primary btn-lg' type="submit" style="margin-left: 150px;">Salvar</button>
+               <button class='btn btn-danger btn-lg' type="button" onclick="location.href='{% url 'compras:compras_home' %}'" style="margin-left: 10px;">Sair</button>
+           </div>
+       </div>
+   
+   </form>
+ </div>

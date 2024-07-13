@@ -1,7 +1,9 @@
 <div class="product product-list-item">
     <div class="product-cover">
         <a href="{% url "compras:product" product.id%}">
+            {% if product.img %} 
             <img src={{product.img.url}} alt="">
+            {% endif %}
             </a>
     </div>
     <div class="product-title-container">

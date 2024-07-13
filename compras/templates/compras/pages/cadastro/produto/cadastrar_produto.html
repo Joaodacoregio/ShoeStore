@@ -1,0 +1,14 @@
+{% extends "compras/partials/base.html" %}
+
+{% block content %}
+   {% load widget_tweaks %}
+   <div style="background-color: #f4f4f4; min-height: 50vh; display: flex; justify-content: center; align-items: center; padding: 10px;">
+
+      <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); width: 100%; max-width: 1400px; padding: 20px; text-align: left;">
+  
+          <h1 style="font-size: 2em; margin-bottom: 20px; color: #3498db;">Cadastro de Produto</h1>
+         
+          {% include "compras/pages/cadastro/produto/form_cadastro_produto.html" %}
+   </div>
+    
+{% endblock content %}
