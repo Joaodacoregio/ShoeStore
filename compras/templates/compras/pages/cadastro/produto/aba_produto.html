@@ -15,14 +15,27 @@
    
  
    
-           <div>
-               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Tamanho:</label>
-               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                {{ form.size }}Selecionar
-              </button>
-  
-               {% include 'vendas/partials/form_field_errors.html' with errors=form.size.errors %}
-           </div>
+ 
+            <div> 
+                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Tamanho:</label>
+                <div class="input-group position-relative">
+                    <div class="d-flex align-items-center">
+                        <button type="button" 
+                        id="gradeButton"
+                        class="btn-lg  ml-2" 
+                        data-toggle="modal" 
+                        data-target="#gradeModal"
+                        style='background-color:red;color:white;'
+
+                        >
+                        
+                            Selecionar Grade
+                        </button>
+                        {{ form.size }}
+                    </div>
+                    {% include 'vendas/partials/form_field_errors.html' with errors=form.size.errors %}
+                </div>
+            </div>
    
            <div>
                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Cor:</label>

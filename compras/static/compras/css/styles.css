@@ -149,6 +149,7 @@ body{
 .product-title-container{
     padding: var(--spacing-gutter-small); /* Define o espaçamento interno (padding) como `spacing-gutter-medium` */
     padding-bottom: 1rem; /* Define o espaçamento interno (padding) inferior como 1rem */
+    
 
 }
 
@@ -194,5 +195,4 @@ body{
     text-decoration: none;
 }
 
- 
  
