@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 values[boxId] = sizeValue;
             }
         });
-        console.log(values);  // Aqui você pode fazer o que for necessário com os valores
+        localStorage.setItem("grade",JSON.stringify(values));
         document.getElementById("closeModal").click()
 
         
@@ -81,4 +81,9 @@ function resetValues() {
     });
 }
 
- 
+function formData() {
+    const gradeData = JSON.parse(localStorage.getItem("grade")) || {};
+    const gradeForm = document.getElementById("id_size");
+    gradeForm.value = JSON.stringify(gradeData);
+    document.getElementById("produtoForm").submit();
+}

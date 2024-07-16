@@ -30,7 +30,7 @@
               {% for tamanho in categoria.tamanhos %}
               <div class="col-md-3">
                 <div class="text-center">
-                  <div id="{{categoria.nome}}_{{tamanho}}"class="box">
+                  <div id="{{tamanho}}"class="box">
                     <h5 id="{{tamanho}}_id" style="margin-top: 0.5em; opacity: 0.6;">{{ tamanho }}</h5>
                     <button class="btn btn-lg btn-primary btn-add" data-type="plus" data-field="quant[{{ forloop.parentloop.counter0 }}][{{ forloop.counter0 }}]">+</button>
                     <span class="size-number" style="font-size: 2em;">0</span>

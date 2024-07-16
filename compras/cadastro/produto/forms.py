@@ -35,10 +35,8 @@ class ProductForm(forms.ModelForm):
     )
  
  
-    size = forms.DecimalField(
-        label="Tamanho",
-        max_digits=5,
-        decimal_places=2,
+    size = forms.JSONField(
+        label="Grade",
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'style': 'display: none;'})
     )

@@ -35,7 +35,7 @@ class Product(models.Model):
     profit_margin = models.DecimalField(max_digits=10,decimal_places=2,default=0)
     color = models.CharField(max_length=10, choices=COLOR_BASIC_CHOICES)
     reference = models.CharField(max_length=10,default="")
-    size = models.IntegerField(default=0)
+    size = models.JSONField()
 
     category = models.ForeignKey(
        to=Category,on_delete=models.SET_NULL,null=True
