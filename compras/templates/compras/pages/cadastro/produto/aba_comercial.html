@@ -1,26 +1,31 @@
 <div class="form-container">
-       <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
-   
-           <div>
-               <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço de custo:</label>
-               {{ form.cost_price }}
-               {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
-           </div>
+    <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço de custo:</label>
+            {{ form.cost_price }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
+        </div>
 
-           <div>
-                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Margem de lucro:</label>
-                {{ form.profit_margin }}
-                {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
-            </div>
+        <div>
+            <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço de venda:</label>
+            {{ form.sale_price }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
+        </div>
+    </div>
 
-           <div>
-                <label style="font-size: 1.2em; color: #333; margin-bottom: 5px; display: block;">Preço de venda:</label>
-                {{ form.sale_price }}
-                {% include 'vendas/partials/form_field_errors.html' with errors=form.title.errors %}
-          </div>
+    {% comment  %}
+    TODO: margem de lucro não deve ser mandada para o db,
+    dava para adicionar margem ou preço de venda 
+    recomendado fazendo um web scrap com a referencia ou nome!
+    {% endcomment %}
 
+    <div class="card sm-3" style="margin:2rem auto;width:30rem;">
+        <div class="card-header bg-primary text-white">Informações</div>
+        <div class="card-body">
+            <label for="id_profit_margin" class="form-label">Margem de lucro:</label>
+            {{ form.profit_margin }}
+            {% include 'vendas/partials/form_field_errors.html' with errors=form.profit_margin.errors %}
+        </div>
+    </div>
 
-   
- 
-       </div>
 </div>
