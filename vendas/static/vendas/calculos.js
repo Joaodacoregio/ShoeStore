@@ -180,7 +180,7 @@ async function enviarVenda() {
     };
 
     try {
-        const response = await fetch('/api/vendas/', {
+        const response = await fetch('/vendas/api/vendas/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

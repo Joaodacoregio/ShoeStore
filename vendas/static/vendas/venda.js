@@ -55,7 +55,7 @@ async function fetchData(url) {
  */
 function adicionarProduto(itemVenda) {
   const idProduto = itemVenda.produtoId;
-  fetchData(`/api/produtos/${idProduto}`).then((produto) => {
+  fetchData(`/vendas/api/produtos/${idProduto}`).then((produto) => {
     document.getElementById(`produto${idProduto}Input`).value = produto.nome;
     document.getElementById(`preco${idProduto}Input`).value = produto.preco;
     itemVenda.preco_unitario_venda = produto.preco;
@@ -221,12 +221,12 @@ document.addEventListener('DOMContentLoaded', async function () {
  
 
   if (clienteId) {
-    const dadosCliente = await fetchData(`/api/obter_nome_cliente/?cliente_id=${clienteId}`);
+    const dadosCliente = await fetchData(`/vendas/api/obter_nome_cliente/?cliente_id=${clienteId}`);
     document.getElementById("clientesInput").value = dadosCliente.nome_cliente;
   }
 
   if (vendedorId) {
-    const dadosVendedor = await fetchData(`/api/obter_nome_vendedor/?vendedor_id=${vendedorId}`);
+    const dadosVendedor = await fetchData(`/vendas/api/obter_nome_vendedor/?vendedor_id=${vendedorId}`);
     document.getElementById("vendedoresInput").value = dadosVendedor.nome_vendedor;
   }
 
