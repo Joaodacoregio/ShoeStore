@@ -16,5 +16,5 @@ A vantagem de rodar no navegador é que o design fica mais moderno e o usuário 
 ## *Spinner para deixar o programa mais fluido e remover os autocompletes indesejados.*
 ![image](https://github.com/user-attachments/assets/f55c74cf-2a55-40ef-83df-e38186322475)
 
-## *Totalmente resposivo pensando em mobile e roda até com o zoom bem auto*
+## *Totalmente resposivo pensando em mobile e roda até com o zoom*
 ![image](https://github.com/user-attachments/assets/3dfb3a64-f588-4ca1-b997-0c64a8872479)
