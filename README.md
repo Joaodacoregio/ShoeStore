@@ -20,8 +20,4 @@ A vantagem de rodar no navegador é que o design fica mais moderno e o usuário 
 
 ## *Totalmente resposivo pensando em mobile e roda até com o zoom*
 ![image](https://github.com/user-attachments/assets/3dfb3a64-f588-4ca1-b997-0c64a8872479)
-
-
-
-## *Dois modulos funcinais no momento** 
 ![image](https://github.com/user-attachments/assets/85597489-a001-40ce-b20d-2590ed3e0682)
