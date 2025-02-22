@@ -4,7 +4,7 @@ A vantagem de rodar no navegador é que o design fica mais moderno e o usuário 
 
  
 
-## *UI/UX usando varios modais e cores para deixar qualquer um feliz :)*
+## *UI/UX usando varios modais e cores*
 ![image](https://github.com/user-attachments/assets/3f8e31ee-19ef-481a-b0df-8a488d89c209)
 ![image](https://github.com/user-attachments/assets/02829703-b694-4bf1-844e-a3d1fce7ecca)
 ![image](https://github.com/user-attachments/assets/b3e76ae7-998d-4c37-a976-0e25c751407c)
@@ -18,6 +18,7 @@ A vantagem de rodar no navegador é que o design fica mais moderno e o usuário 
 
 
 
-## *Totalmente resposivo pensando em mobile e roda até com o zoom*
-![image](https://github.com/user-attachments/assets/3dfb3a64-f588-4ca1-b997-0c64a8872479)
+## *Totalmente resposivo pensando em mobile*
 ![image](https://github.com/user-attachments/assets/85597489-a001-40ce-b20d-2590ed3e0682)
+![image](https://github.com/user-attachments/assets/3dfb3a64-f588-4ca1-b997-0c64a8872479)
+ 
