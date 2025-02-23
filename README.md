@@ -6,7 +6,6 @@ A vantagem de rodar no navegador é que o design fica mais moderno e o usuário 
 
 ## *UI/UX usando varios modais e cores*
 ![image](https://github.com/user-attachments/assets/3f8e31ee-19ef-481a-b0df-8a488d89c209)
-ps-> o botão fica verda apenas se o usuario selecionar uma grade se não ele é vermelho
 ![image](https://github.com/user-attachments/assets/02829703-b694-4bf1-844e-a3d1fce7ecca)
 ![image](https://github.com/user-attachments/assets/b3e76ae7-998d-4c37-a976-0e25c751407c)
 ![image](https://github.com/user-attachments/assets/a7ea243a-a0b5-41a3-8eb6-8b4832db3b4b)
